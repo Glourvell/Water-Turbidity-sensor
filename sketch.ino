@@ -1,12 +1,11 @@
-// ESP32 Turbidity Sensor Test
-// Sensor AOUT -> GPIO34
+
 
 const int turbidityPin = 34;
 
 void setup() {
   Serial.begin(115200);
 
-  // Set ADC resolution to 12-bit (0 - 4095)
+  //  ADC resolution to 12-bit (0 - 4095)
   analogReadResolution(12);
 
   Serial.println("ESP32 Turbidity Sensor Test");
@@ -16,7 +15,7 @@ void setup() {
 void loop() {
   int sensorValue = analogRead(turbidityPin);
 
-  // Convert ADC reading to voltage
+  // ADC reading to voltage
   float voltage = sensorValue * (3.3 / 4095.0);
 
   Serial.print("Raw ADC: ");
